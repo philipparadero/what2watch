@@ -1,0 +1,142 @@
+.navbar {
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  z-index: 99;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #d1d7e0;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 100px;
+  border-bottom: 1px solid #d1d7e0;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 2px;
+  list-style: none;
+  width: 30vw;
+  text-align: center;
+}
+
+.nav-links {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #d1d7e0;
+}
+
+.nav-item {
+  height: 100px;
+}
+
+.nav-links:hover {
+  font-weight: bold;
+  color: white;
+  transition-duration: 0.3s;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .NavbarItems {
+    position: relative;
+  }
+
+  .navbar-container {
+    border-bottom: none;
+    width: 100%;
+    position: relative;
+  }
+
+  .nav-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    top: 100px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+  .navbar-logo {
+    padding-left: 20px;
+  }
+  .nav-menu.active {
+    background-color: #2d283e;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu-icon {
+    color: white;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-120%, 80%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .form-container {
+    position: absolute;
+    height: 20px;
+    right: 80px;
+    width: 150px;
+    top: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form-container {
+    position: fixed;
+    top: 70px;
+    width: auto;
+    left: 20px;
+  }
+
+  .navbar-logo {
+    padding-left: 10px;
+  }
+
+  .nav-menu {
+    height: 85vh;
+  }
+}
